@@ -83,6 +83,25 @@
   line-height: 1;
 }
 
+.activeCardContent .contentPlace,
+.activeCardContent .contentTitle1,
+.activeCardContent .contentTitle2,
+.activeCardContent .contentDesc {
+  font-size: 2.2em; /* atau sesuai kebutuhan */
+  transition: font-size 0.3s cubic-bezier(0.4,0,0.2,1);
+  transition-delay: 0.4s;
+}
+
+.activeCardContent .contentTitle1,
+.activeCardContent .contentTitle2 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.activeCardContent .contentDesc {
+  font-size: 1.5em;
+}
+
 .titleBox1,
 .titleBox2 {
   height: 100px;
@@ -183,7 +202,8 @@
 .progressSubForeground {
   height: 3px;
   background-color: #ecad29;
-  will-change: width;
+  will-change: 0%;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
 .slideNumbers {
@@ -207,6 +227,7 @@
   font-size: 32px;
   font-weight: bold;
   will-change: transform;
+  transition: color 0.3s;
 }
 
 .cover {
