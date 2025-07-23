@@ -7,8 +7,8 @@ export const cardData = [
     image: '/images/bujungpitue.jpg'
   },
   {
-    place: 'Air Terjun Macaya',
-    title: 'AIR TERJUN',
+    place: 'Macaya',
+    title: 'Tempat',
     title2: 'MACAYA',
     description: 'Air terjun dengan ketinggian 50 meter yang dikelilingi oleh hutan tropis yang lebat. Suasana sejuk dan aliran air yang jernih membuatnya menjadi tempat yang sempurna untuk relaksasi.',
     image: '/images/kincirhighland.png'
@@ -34,5 +34,12 @@ export const cardData = [
     description: 'Bukit di lainungan',
     image: '/images/macaya.jpg'
   },
+  {
+    place: 'Hawai',
+    title: 'Pantai',
+    title2: 'Pasir Putih',
+    description: 'Indah',
+    image: '/images/travel.jpeg'
+  }
   // Tambahkan data destinasi lainnya sesuai kebutuhan
 ];
