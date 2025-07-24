@@ -13,6 +13,7 @@ const TimedCards = () => {
   const detailsEvenRef = useRef(true);
   const isAnimatingRef = useRef(false);
   const progressRef = useRef(null);
+  const [cards, setCards] = useState([]);
 
   // Inisialisasi variabel dan posisi awal
   const init = () => {
@@ -250,6 +251,12 @@ const TimedCards = () => {
         gsap.killTweensOf('*');
       };
     }
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/cards')
+      .then(res => res.json())
+      .then(data => setCards(data));
   }, []);
 
   return (
