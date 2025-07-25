@@ -1,7 +1,5 @@
 import "./globals.css";
 
-
-
 export const metadata = {
   title: "Wisata Lainungan",
   description: "Wisata Desa Lainungan, Kabupaten Sidrap",
