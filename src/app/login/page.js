@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { auth} from "@/firebase/firebase";
+import { auth, db } from "@/firebase/firebase";
+import styles from "./login.module.css";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -19,7 +20,6 @@ export default function LoginPage() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Check user role from Firestore
       const userDocRef = doc(db, "users", user.uid);
       const userDocSnap = await getDoc(userDocRef);
 
@@ -30,34 +30,62 @@ export default function LoginPage() {
         setError("Anda tidak memiliki hak akses admin.");
       }
     } catch (error) {
-      console.error("Login error:",error);
-      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+      if (["auth/user-not-found", "auth/wrong-password", "auth/invalid-credential"].includes(error.code)) {
         setError("Email atau kata sandi salah.");
       } else {
-        setError(`Terjadi kesalahan : ${error.code}`);
+        setError(`Terjadi kesalahan: ${error.code}`);
       }
     }
   };
 
   return (
-    <form onSubmit={handleLogin} className="max-w-md mx-auto mt-10 p-4 border">
-      <h2 className="text-xl font-bold mb-4">Login Admin</h2>
-      {error && <p className="text-red-500 mb-4">{error}</p>}
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="block w-full mb-2 border p-2"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="block w-full mb-2 border p-2"
-      />
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Login</button>
-    </form>
+    <div className={styles.container}>
+      <div className={styles.card}>
+        {/* Kiri - Gambar & teks */}
+        <div className={styles.left}>
+          <div className={styles.leftText}>
+            <h2>Don’t have an account?</h2>
+            <p>
+              Register to access all the features of our service. Manage your
+              trips and bookings in one place. It’s free!
+            </p>
+            <div className={styles.icons}>
+              <i className="fab fa-instagram"></i>
+              <i className="fab fa-facebook"></i>
+              <i className="fab fa-telegram"></i>
+              <i className="fab fa-youtube"></i>
+              <i className="fab fa-pinterest"></i>
+            </div>
+          </div>
+        </div>
+
+        {/* Kanan - Form Login */}
+        <div className={styles.right}>
+          <h2 className={styles.heading}>Sign in</h2>
+          {error && <p className={styles.error}>{error}</p>}
+          <form onSubmit={handleLogin} className="space-y-4">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={styles.input}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
+              required
+            />
+            <button type="submit" className={styles.button}>
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
