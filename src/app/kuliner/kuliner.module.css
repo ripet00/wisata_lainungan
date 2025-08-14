@@ -1,0 +1,86 @@
+/* Section 1: Fullscreen Title Center */
+.heroFull {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #f0f4ff 60%, #fff 100%);
+}
+
+.centerTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.centerTitle span {
+  color: #4b6cb7;
+}
+
+/* Section 2: Slide Content */
+.slideSection {
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideContent {
+  width: 80vw;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 2rem;
+  /* Animation for slide effect */
+  transform: translateX(0);
+  transition: transform 1s cubic-bezier(.77,0,.18,1);
+}
+
+.slideSection.inView .slideContent {
+  transform: translateX(0); /* Slide in when in view */
+}
+
+.slideImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideText {
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.slideTitle {
+  font-size: 2.5rem;
+  color: #4b6cb7;
+  margin-bottom: 1rem;
+}
+
+.slideDesc {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .slideContent {
+    flex-direction: column;
+    width: 95vw;
+    padding: 1rem;
+  }
+  .slideText {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+}
