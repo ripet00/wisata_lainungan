@@ -1,0 +1,279 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: 'Inter', sans-serif;
+}
+
+.card {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.6);
+  will-change: transform;
+}
+
+.cardLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Memastikan link berada di atas gambar latar */
+  text-indent: -9999px; /* Menyembunyikan teks link jika ada */
+}
+
+.cardContent {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.87);
+  padding-left: 16px;
+  bottom: 100px;
+}
+
+.contentStart {
+  width: 30px;
+  height: 5px;
+  border-radius: 99px;
+  background-color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 6px;
+}
+
+.contentPlace {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.contentTitle1,
+.contentTitle2 {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  line-height: 1;
+}
+
+.details {
+  position: absolute;
+  top: 240px;
+  left: 60px;
+  z-index: 22;
+  max-width: 600px;
+}
+
+.placeBox {
+  height: 46px;
+  overflow: hidden;
+}
+
+.placeBox .text {
+  padding-top: 16px;
+  font-size: 20px;
+  position: relative;
+}
+
+.placeBox .text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  border-radius: 99px;
+  background-color: white;
+}
+
+.title1,
+.title2 {
+  font-weight: 600;
+  font-size: 100px;
+  font-family: 'Oswald', sans-serif;
+  line-height: 1;
+}
+
+.activeCardContent .contentPlace,
+.activeCardContent .contentTitle1,
+.activeCardContent .contentTitle2,
+.activeCardContent .contentDesc {
+  font-size: 2.2em; /* atau sesuai kebutuhan */
+  transition: font-size 0.3s cubic-bezier(0.4,0,0.2,1);
+  transition-delay: 0.4s;
+}
+
+.activeCardContent .contentTitle1,
+.activeCardContent .contentTitle2 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.activeCardContent .contentDesc {
+  font-size: 1.5em;
+}
+
+.titleBox1,
+.titleBox2 {
+  height: 100px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.desc {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 500px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.cta {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.bookmark {
+  border: none;
+  background-color: #ecad29;
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.bookmark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.discover {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  height: 36px;
+  border-radius: 99px;
+  color: #ffffff;
+  padding: 4px 24px;
+  font-size: 12px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.pagination {
+  position: absolute;
+  left: 40%;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  z-index: 60;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.33);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.arrow svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.arrowRight {
+  margin-left: 20px;
+}
+
+.progressSubContainer {
+  margin-left: 24px;
+  width: 500px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.progressSubBackground {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.progressSubForeground {
+  height: 3px;
+  background-color: #ecad29;
+  will-change: 0%;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.slideNumbers {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  z-index: 60;
+  margin-left: 20px;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  will-change: transform;
+  transition: color 0.3s;
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 100;
+  will-change: transform;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .details {
+    top: 120px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .title1,
+  .title2 {
+    font-size: 48px;
+  }
+
+  .desc {
+    max-width: 100%;
+  }
+
+  .pagination {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .progressSubContainer {
+    width: 200px;
+  }
+}
