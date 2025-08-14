@@ -48,12 +48,12 @@ export default function LoginPage() {
       <div className={styles.card}>
         {/* Left Side - Branding and Register Info */}
         <div className={styles.left}>
-          <div className={styles.brand}>NOMAD</div>
+          <div className={styles.brand}>ADMIN</div>
           <div className={styles.leftContent}>
-            <h2>Don't have an account?</h2>
+            <h2>Apakah kamu admin ?</h2>
             <p>
-              Register to access all the features of our service.<br />
-              Manage your trips and bookings in one place, it's free!
+              Selamat datang di laman operator website wisata Lainungan<br />
+              Login untuk mengatur website
             </p>
             <Link href="/register" className={styles.registerButton}>
               Sign up
