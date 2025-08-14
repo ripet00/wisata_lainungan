@@ -1,11 +1,15 @@
 "use client";
-import { useState, useEffect } from "react";
-import TimedCards from "../components/TimeCards";
+import { useState, useEffect, Suspense } from "react";
+import TimedCards from "../components/timecards/TimeCards";
 import { db } from '@/firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import Link from "next/link";
+import Navbar from "../components/navbar/Navbar";
+import Showcase from "@/components/home/showcase";
+import Footer from "../components/Footer";
+
 
 export default function Home() {
+
   const [cards, setCards] = useState([])
 
   useEffect(() => {
@@ -18,13 +22,18 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
-      <TimedCards/>
-      <div className="text-center mt-4">
-        <Link href="/login" className="text-blue-500 underline">
-          Admin Login
-        </Link>
-      </div>
-    </main>
+    <>
+    <Navbar />
+      <main>
+        <Suspense fallback={<loading />}>
+          <TimedCards/>
+          <Showcase/>
+
+        </Suspense>
+        <Footer/>
+      </main>
+
+    </>
+    
   );
 }
