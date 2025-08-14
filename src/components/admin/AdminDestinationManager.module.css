@@ -1,0 +1,283 @@
+.addButton {
+    background-color: #10b981; /* bg-green-500 */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cancelButton {
+    background-color: #6b7280; /* gray-500 */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tambahkan ini ke AdminDestinationManager.module.css */
+
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.destinationCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.destinationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 1.5rem;
+  flex-grow: 1; /* Mendorong tombol aksi ke bawah */
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: #1a202c;
+}
+
+.cardPlace {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.mapContainer {
+  margin-top: auto; /* Mendorong peta ke bawah jika deskripsi pendek */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Anda bisa memperbarui style tombol jika perlu */
+.editButton, .deleteButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: white;
+}
+
+.editButton {
+  background-color: #4299e1; /* Biru */
+}
+
+.editButton:hover {
+  background-color: #3182ce;
+}
+
+.deleteButton {
+  background-color: #f56565; /* Merah */
+}
+
+.deleteButton:hover {
+  background-color: #e53e3e;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalTitle {
+  text-align: center;
+  color: #2d3748;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Custom scrollbar for form container */
+.formContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.formContainer::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.formContainer::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background-color: #f8fafc;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.uploadButton {
+  padding: 0.75rem;
+  background-color: #edf2f7;
+  color: #2d3748;
+  border: 1px dashed #cbd5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.uploadButton:hover {
+  background-color: #e2e8f0;
+  border-color: #a0aec0;
+}
+
+.uploadIcon {
+  font-size: 1rem;
+}
+
+.uploadStatus {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #48bb78;
+  text-align: center;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.cancelButton {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton:hover {
+  background-color: #cbd5e0;
+}
+
+.submitButton {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #3182ce;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-height: calc(70vh - 150px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
