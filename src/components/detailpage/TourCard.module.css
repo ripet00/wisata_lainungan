@@ -1,0 +1,32 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.tourCard {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tourCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tourCard h2 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-top: 0;
+  color: #0070f3;
+}
+
+.tourCard ul {
+  padding-left: 1.5rem;
+}
+
+.tourCard li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
