@@ -4,7 +4,9 @@ export default function CardDestinasi({ title, image }) {
       <img src={image} alt={title} className="w-full h-40 object-cover" />
       <div className="p-4">
         <h3 className="font-semibold text-lg">{title}</h3>
-        <a href="/destinasi" className="text-blue-500 text-sm">Lihat Selengkapnya</a>
+        <Link href="/destinasi" className="text-blue-500 text-sm">
+          Lihat Selengkapnya
+        </Link>
       </div>
     </div>
   );
