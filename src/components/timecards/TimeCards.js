@@ -30,6 +30,9 @@ const TimedCards = () => {
 
   // Inisialisasi animasi setelah data ada
   useEffect(() => {
+    const startAnimation = () => {
+      animationRef.current = setInterval(step, 5000);
+    };
     if (cards.length === 0) return;
 
     const init = () => {
