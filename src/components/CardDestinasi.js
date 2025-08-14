@@ -7,8 +7,8 @@ export default function CardDestinasi({ title, image }) {
       <Image 
         src={image} 
         alt={title} 
-        width={400} // sesuaikan
-        height={160} // sesuaikan
+        width={400} 
+        height={160} 
         className="w-full h-40 object-cover"
       />
       <div className="p-4">

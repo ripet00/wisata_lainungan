@@ -1,6 +1,6 @@
 'use client'
 import styles from './kuliner.module.css'
-import Image from 'next/image'
+import Image from 'next/image';
 import Navbar from '@/components/navbar/Navbar'
 import { useRef, useEffect, useState } from 'react';
 

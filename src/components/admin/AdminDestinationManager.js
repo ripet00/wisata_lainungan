@@ -12,6 +12,7 @@ import {
 import { db } from "@/firebase/firebase";
 import styles from "./AdminDestinationManager.module.css";
 import { CldUploadWidget } from 'next-cloudinary';
+import Image from 'next/image';
 
 export default function AdminDestinationManager() {
   const [destinations, setDestinations] = useState([]);
@@ -182,8 +183,12 @@ export default function AdminDestinationManager() {
 
       <div className={styles.destinationsGrid}>
         {destinations.map((dest) => (
-                    <div key={dest.id} className={styles.destinationCard}>
-            <img src={dest.image} alt={dest.title} className={styles.cardImage} />
+            <div key={dest.id} className={styles.destinationCard}>
+            <Image 
+              src={dest.image} 
+              alt={dest.title} 
+              className={styles.cardImage} 
+            />
             <div className={styles.cardContent}>
               <h3 className={styles.cardTitle}>{dest.title}</h3>
               <p className={styles.cardPlace}>{dest.place}</p>
