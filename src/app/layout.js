@@ -11,6 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
+      <head>
+        <meta name="google-site-verification" content="BGz6kL8pGq4aO9VO2RRVhKVI5liJvbmrIeEtINnTWkc" />
+      </head>
       <body suppressHydrationWarning={true}>
         {children}
       </body>
