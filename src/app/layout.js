@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <head>
-        <meta name="google-site-verification" content="BGz6kL8pGq4aO9VO2RRVhKVI5liJvbmrIeEtINnTWkc" />
+        <meta name="google-site-verification" content="WxSQSUIDzBYTXGXSkHoMSXRBux2J7fBkTqppYXwvw_M" />
       </head>
       <body suppressHydrationWarning={true}>
         {children}
